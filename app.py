@@ -71,7 +71,7 @@ def generate_plot(data: pd.DataFrame, country_list: list):
                 "Population (2020)",
             ],
         )
-    )
+    ).properties(width=500)
     return (
         chart.encode(y="People_fully_vaccinated_pct:Q").interactive()
         & chart.encode(y="People_partially_vaccinated_pct:Q").interactive()
@@ -84,9 +84,11 @@ st.title("Covid-19 Full vaccination percentage tracker")
 data = expand_with_population(get_vaccine_data())
 full_country_list = sorted(list(set(data["Country_Region"])))
 country_list = st.multiselect(
-    "Countries", options=full_country_list, default=["Poland","Mexico","United States"]
+    "Countries",
+    options=full_country_list,
+    default=["Poland", "Mexico", "United States"],
 )
 
-st.write(generate_plot(data, country_list))
+st.altair_chart(generate_plot(data, country_list), use_container_width=True)
 
 # %%
