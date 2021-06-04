@@ -91,4 +91,4 @@ country_list = st.multiselect(
 
 st.altair_chart(generate_plot(data, country_list), use_container_width=True)
 
-# %%
+st.write("https://github.com/papagala/front-end-msc")
