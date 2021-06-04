@@ -71,7 +71,6 @@ def generate_plot(data: pd.DataFrame, country_list: list):
                 "Population (2020)",
             ],
         )
-        .properties(width=660)
     )
     return (
         chart.encode(y="People_fully_vaccinated_pct:Q").interactive()
