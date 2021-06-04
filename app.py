@@ -84,7 +84,7 @@ st.title("Covid-19 Full vaccination percentage tracker")
 data = expand_with_population(get_vaccine_data())
 full_country_list = sorted(list(set(data["Country_Region"])))
 country_list = st.multiselect(
-    "Countries", options=full_country_list, default=["Poland"]
+    "Countries", options=full_country_list, default=["Poland","Mexico","United States"]
 )
 
 st.write(generate_plot(data, country_list))
